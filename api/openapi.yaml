@@ -1,0 +1,217 @@
+openapi: 3.0.0
+info:
+  title: Servicio de consulta del historial de constantes de un usuario
+  description: API que contiene los microservicios para la consulta de datos médicos
+    de constantes vitales de usuarios y su perfil
+  contact:
+    email: dsanjuank@alumnos.unex.es
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/U5623/HistorialConsulta/1.0.0
+  description: SwaggerHub API Auto Mocking
+- url: https://app.swaggerhub.com/apis/U5623/HistorialConsulta/1.0.0#trial
+  description: API para el Servicio de consulta del historial de constantes de un
+    usuario
+tags:
+- name: Servidor
+  description: Operaciones ofrecidas por el servidor
+paths:
+  /userdata/{userId}:
+    get:
+      tags:
+      - Servidor
+      summary: Devuelve los datos de constantes vitales de un usuario
+      description: Devuelve los datos de constantes vitales de un usuario
+      operationId: userdataUserIdGET
+      parameters:
+      - name: userId
+        in: path
+        description: Identificador del usuario
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Devuelve los datos de constantes vitales de un usuario
+        "400":
+          description: Error de cliente
+        "500":
+          description: Error interno
+      x-swagger-router-controller: Servidor
+    put:
+      tags:
+      - Servidor
+      summary: Modifica los datos de constantes vitales de un usuario
+      description: Modifica los datos de constantes vitales de un usuario
+      operationId: userdataUserIdPUT
+      parameters:
+      - name: userId
+        in: path
+        description: Identificador del usuario
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Modifica los datos de constantes vitales de un usuario
+        "400":
+          description: Error de cliente
+        "500":
+          description: Error interno
+      x-swagger-router-controller: Servidor
+    delete:
+      tags:
+      - Servidor
+      summary: Borra los datos de constantes vitales de un usuario
+      description: Borra los datos de constantes vitales de un usuario
+      operationId: userdataUserIdDELETE
+      parameters:
+      - name: userId
+        in: path
+        description: Identificador del usuario
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Borra los datos de constantes vitales de un usuario
+        "400":
+          description: Error de cliente
+        "500":
+          description: Error interno
+      x-swagger-router-controller: Servidor
+  /user/{userId}:
+    get:
+      tags:
+      - Servidor
+      summary: Devuelve los datos personales de un usuario
+      description: Devuelve los datos personales de un usuario
+      operationId: userUserIdGET
+      parameters:
+      - name: userId
+        in: path
+        description: Identificador del usuario
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Borra los datos personales de un usuario
+        "400":
+          description: Error de cliente
+        "500":
+          description: Error interno
+      x-swagger-router-controller: Servidor
+    put:
+      tags:
+      - Servidor
+      summary: Modifica los datos personales de un usuario
+      description: Modifica los datos personales de un usuario
+      operationId: userUserIdPUT
+      parameters:
+      - name: userId
+        in: path
+        description: Identificador del usuario
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Modifica los datos personales de un usuario
+        "400":
+          description: Error de cliente
+        "500":
+          description: Error interno
+      x-swagger-router-controller: Servidor
+    post:
+      tags:
+      - Servidor
+      summary: Inserta un nuevo usuario
+      description: Inserta un nuevo usuario
+      operationId: userUserIdPOST
+      parameters:
+      - name: userId
+        in: path
+        description: Identificador del usuario
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Inserta un nuevo usuario
+        "400":
+          description: Error de cliente
+        "500":
+          description: Error interno
+      x-swagger-router-controller: Servidor
+    delete:
+      tags:
+      - Servidor
+      summary: Elimina un usuario
+      description: Elimina un usuario
+      operationId: userUserIdDELETE
+      parameters:
+      - name: userId
+        in: path
+        description: Identificador del usuario
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Borra los datos personales de un usuario
+        "400":
+          description: Error de cliente
+        "500":
+          description: Error interno
+      x-swagger-router-controller: Servidor
+  /login:
+    get:
+      tags:
+      - Servidor
+      summary: Devuelve los datos de constantes vitales de un usuario
+      description: Devuelve los datos de constantes vitales de un usuario
+      operationId: loginGET
+      parameters:
+      - name: email
+        in: query
+        description: email del usuario
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: password
+        in: query
+        description: contraseña del usuario
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Devuelve los datos de constantes vitales de un usuario
+        "400":
+          description: Error de cliente
+        "500":
+          description: Error interno
+      x-swagger-router-controller: Servidor
+components: {}
