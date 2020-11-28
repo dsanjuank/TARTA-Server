@@ -13,6 +13,16 @@ module.exports.loginGET = function loginGET (req, res, next, email, password) {
     });
 };
 
+module.exports.userPOST = function userPOST (req, res, next) {
+  Servidor.userPOST(req.body)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
 module.exports.userUserIdDELETE = function userUserIdDELETE (req, res, next, userId) {
   Servidor.userUserIdDELETE(userId)
     .then(function (response) {
@@ -33,18 +43,8 @@ module.exports.userUserIdGET = function userUserIdGET (req, res, next, userId) {
     });
 };
 
-module.exports.userUserIdPOST = function userUserIdPOST (req, res, next, userId) {
-  Servidor.userUserIdPOST(userId)
-    .then(function (response) {
-      utils.writeJson(res, response);
-    })
-    .catch(function (response) {
-      utils.writeJson(res, response);
-    });
-};
-
 module.exports.userUserIdPUT = function userUserIdPUT (req, res, next, userId) {
-  Servidor.userUserIdPUT(userId)
+  Servidor.userUserIdPUT(userId, req.body)
     .then(function (response) {
       utils.writeJson(res, response);
     })
@@ -74,7 +74,7 @@ module.exports.userdataUserIdGET = function userdataUserIdGET (req, res, next, u
 };
 
 module.exports.userdataUserIdPUT = function userdataUserIdPUT (req, res, next, userId) {
-  Servidor.userdataUserIdPUT(userId)
+  Servidor.userdataUserIdPUT(userId, req.body)
     .then(function (response) {
       utils.writeJson(res, response);
     })

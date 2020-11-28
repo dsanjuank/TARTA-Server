@@ -15,6 +15,8 @@ servers:
 - url: https://app.swaggerhub.com/apis/U5623/HistorialConsulta/1.0.0#trial
   description: API para el Servicio de consulta del historial de constantes de un
     usuario
+- url: http://localhost:8080
+  description: localhost
 tags:
 - name: Servidor
   description: Operaciones ofrecidas por el servidor
@@ -136,29 +138,6 @@ paths:
         "500":
           description: Error interno
       x-swagger-router-controller: Servidor
-    post:
-      tags:
-      - Servidor
-      summary: Inserta un nuevo usuario
-      description: Inserta un nuevo usuario
-      operationId: userUserIdPOST
-      parameters:
-      - name: userId
-        in: path
-        description: Identificador del usuario
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      responses:
-        "200":
-          description: Inserta un nuevo usuario
-        "400":
-          description: Error de cliente
-        "500":
-          description: Error interno
-      x-swagger-router-controller: Servidor
     delete:
       tags:
       - Servidor
@@ -182,12 +161,27 @@ paths:
         "500":
           description: Error interno
       x-swagger-router-controller: Servidor
+  /user:
+    post:
+      tags:
+      - Servidor
+      summary: Inserta un nuevo usuario
+      description: Inserta un nuevo usuario
+      operationId: userPOST
+      responses:
+        "200":
+          description: Inserta un nuevo usuario
+        "400":
+          description: Error de cliente
+        "500":
+          description: Error interno
+      x-swagger-router-controller: Servidor
   /login:
     get:
       tags:
       - Servidor
-      summary: Devuelve los datos de constantes vitales de un usuario
-      description: Devuelve los datos de constantes vitales de un usuario
+      summary: Devuelve los datos de un usuario
+      description: Devuelve los datos de un usuario
       operationId: loginGET
       parameters:
       - name: email
@@ -208,7 +202,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Devuelve los datos de constantes vitales de un usuario
+          description: Devuelve los datos de un usuario
         "400":
           description: Error de cliente
         "500":

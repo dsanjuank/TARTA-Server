@@ -12,6 +12,7 @@ var options = {
 };
 
 var expressAppConfig = oas3Tools.expressAppConfig(path.join(__dirname, 'api/openapi.yaml'), options);
+console.log(expressAppConfig);
 expressAppConfig.addValidator();
 var app = expressAppConfig.getApp();
 

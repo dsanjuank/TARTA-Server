@@ -1,17 +1,38 @@
 'use strict';
 
-
 /**
- * Devuelve los datos de constantes vitales de un usuario
- * Devuelve los datos de constantes vitales de un usuario
+ * Devuelve los datos de un usuario
+ * Devuelve los datos de un usuario
  *
  * email String email del usuario
  * password String contraseña del usuario
  * no response value expected for this operation
  **/
+
 exports.loginGET = function(email,password) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    const user = {
+      name: 'Pepito',
+      surname: 'Garcia',
+      age: Math.floor(Math.random() * 30) + 70
+    }
+
+    resolve(user);
+  });
+}
+
+
+/**
+ * Inserta un nuevo usuario
+ * Inserta un nuevo usuario
+ *
+ * no response value expected for this operation
+ **/
+exports.userPOST = function(body) {
+  return new Promise(function(resolve, reject) {
+    const user = req.body;
+
+    resolve(body);
   });
 }
 
@@ -25,7 +46,9 @@ exports.loginGET = function(email,password) {
  **/
 exports.userUserIdDELETE = function(userId) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    const result = {};
+
+    resolve(result);
   });
 }
 
@@ -39,21 +62,13 @@ exports.userUserIdDELETE = function(userId) {
  **/
 exports.userUserIdGET = function(userId) {
   return new Promise(function(resolve, reject) {
-    resolve();
-  });
-}
+    const user = {
+      name: 'Pepito',
+      surname: 'Garcia',
+      age: Math.floor(Math.random() * 30) + 70
+    }
 
-
-/**
- * Inserta un nuevo usuario
- * Inserta un nuevo usuario
- *
- * userId String Identificador del usuario
- * no response value expected for this operation
- **/
-exports.userUserIdPOST = function(userId) {
-  return new Promise(function(resolve, reject) {
-    resolve();
+    resolve(user);
   });
 }
 
@@ -65,9 +80,17 @@ exports.userUserIdPOST = function(userId) {
  * userId String Identificador del usuario
  * no response value expected for this operation
  **/
-exports.userUserIdPUT = function(userId) {
+exports.userUserIdPUT = function(userId, body) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    const user = {
+      name: 'Pepito',
+      surname: 'Garcia',
+      age: Math.floor(Math.random() * 30) + 70
+    }
+
+    const result = {...user, ...body }
+
+    resolve(result);
   });
 }
 
@@ -81,7 +104,9 @@ exports.userUserIdPUT = function(userId) {
  **/
 exports.userdataUserIdDELETE = function(userId) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    const result = {};
+
+    resolve(result);
   });
 }
 
@@ -95,7 +120,25 @@ exports.userdataUserIdDELETE = function(userId) {
  **/
 exports.userdataUserIdGET = function(userId) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    const results = [
+      {
+        ppm: 78,
+        temperature: 37.5,
+        date: new Date()
+      },
+      {
+        ppm: 76,
+        temperature: 37.4,
+        date: new Date()
+      },
+      {
+        ppm: 79,
+        temperature: 37.7,
+        date: new Date()
+      }
+    ]
+
+    resolve(results);
   });
 }
 
@@ -107,9 +150,17 @@ exports.userdataUserIdGET = function(userId) {
  * userId String Identificador del usuario
  * no response value expected for this operation
  **/
-exports.userdataUserIdPUT = function(userId) {
+exports.userdataUserIdPUT = function(userId, body) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    const datauser = {
+      ppm: 79,
+      temperature: 37.7,
+      date: new Date()
+    }
+
+    const result = {...datauser, ...body }
+
+    resolve(result);
   });
 }
 
