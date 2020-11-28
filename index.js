@@ -12,7 +12,6 @@ var options = {
 };
 
 var expressAppConfig = oas3Tools.expressAppConfig(path.join(__dirname, 'api/openapi.yaml'), options);
-console.log(expressAppConfig);
 expressAppConfig.addValidator();
 var app = expressAppConfig.getApp();
 
@@ -20,5 +19,9 @@ var app = expressAppConfig.getApp();
 http.createServer(app).listen(serverPort, function () {
     console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
     console.log('Swagger-ui is available on http://localhost:%d/docs', serverPort);
+});
+
+app.get("/", (req, res, next) => {
+    res.json('wlcome to the app');
 });
 
