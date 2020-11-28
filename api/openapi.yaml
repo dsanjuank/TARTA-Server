@@ -9,14 +9,6 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.0
-servers:
-- url: https://virtserver.swaggerhub.com/U5623/HistorialConsulta/1.0.0
-  description: SwaggerHub API Auto Mocking
-- url: https://app.swaggerhub.com/apis/U5623/HistorialConsulta/1.0.0#trial
-  description: API para el Servicio de consulta del historial de constantes de un
-    usuario
-- url: http://localhost:8080
-  description: localhost
 tags:
 - name: Servidor
   description: Operaciones ofrecidas por el servidor
