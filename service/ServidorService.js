@@ -14,7 +14,8 @@ exports.loginGET = function(email,password) {
     const user = {
       name: 'Pepito',
       surname: 'Garcia',
-      age: Math.floor(Math.random() * 30) + 70
+      age: Math.floor(Math.random() * 30) + 70,
+      jwt: 'eyJHDHDJSUNMDKDFUDNSMSADKDIDFHDSFNeyHDNADSJFNASDNK'
     }
 
     resolve(user);
@@ -30,9 +31,13 @@ exports.loginGET = function(email,password) {
  **/
 exports.userPOST = function(body) {
   return new Promise(function(resolve, reject) {
-    const user = req.body;
+    const data = {
+      id: Math.floor(Math.random() * 300) + 700
+    }
 
-    resolve(body);
+    const result = {...body, ...data }
+
+    resolve(result);
   });
 }
 
@@ -65,7 +70,8 @@ exports.userUserIdGET = function(userId) {
     const user = {
       name: 'Pepito',
       surname: 'Garcia',
-      age: Math.floor(Math.random() * 30) + 70
+      age: Math.floor(Math.random() * 30) + 70,
+      email: 'pepito@hotmail.com'
     }
 
     resolve(user);
