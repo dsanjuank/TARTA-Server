@@ -33,5 +33,5 @@ setInterval(function(){
         socket.write("a17d2a80-1dc6-4372-8edb-29a65eeec5ba.sla.avaibility 1\n");
         socket.end();
     });
-}, 1000);
+}, 10000);
 
